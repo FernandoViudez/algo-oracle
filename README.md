@@ -6,7 +6,7 @@ refs:
     - https://developer.algorand.org/articles/verify-signatures-and-signed-data-within-algorand-smart-contracts/
 
 Visual diagram of this approach:
-    - https://app.diagrams.net/?src=about#G1CMcZ2hqOZJy3C_lubeCJ8b-h1mfBFb6l
+    - https://drive.google.com/file/d/1CMcZ2hqOZJy3C_lubeCJ8b-h1mfBFb6l/view?usp=sharing
 
 
 ### Steps to test this project:
