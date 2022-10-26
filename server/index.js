@@ -14,7 +14,7 @@ app.listen(8080, () => {
     }, 5000)
 })
 
-app.post('/random', async (req, res) => {
+app.post('/profile/role', async (req, res) => {
     if (!req.body || !req.body.programAddress) {
         return res.status(400).json({
             error: true,
@@ -25,8 +25,8 @@ app.post('/random', async (req, res) => {
     const { sk } = algosdk.mnemonicToSecretKey(json.oraclePrivateKey);
     const params = await algoClient.getTransactionParams().do();
 
-    const trustedValue = new Date().getMilliseconds();
-    const encodedData = Buffer.from(params.lastRound + ":" + trustedValue).toString("base64");
+    const role = new Date().getMilliseconds() % 2 == 0 ? 'commander' : 'tycoon';
+    const encodedData = Buffer.from(params.lastRound + ":" + role).toString("base64");
     console.log("Round set ~> ", params.lastRound);
     const bytes_signature = algosdk.tealSign(sk, Buffer.from(encodedData, "base64"), req.body.programAddress);
 
